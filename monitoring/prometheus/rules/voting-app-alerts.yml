@@ -1,0 +1,18 @@
+groups:
+  - name: voting-app-alerts
+    rules:
+      - alert: VotingAppPodNotReady
+        expr: |
+          kube_pod_status_ready{
+            namespace="default",
+            pod=~"voting-lab-(vote|result|worker|db|redis)-.*",
+            condition="true"
+          } == 0
+        for: 5m
+        labels:
+          severity: warning
+          service: voting-app
+        annotations:
+          summary: "A Voting App pod is not ready"
+          description: "A Voting App pod in namespace default has not reported Ready for five minutes."
+          runbook_url: "https://github.com/Emah1/example-voting-app/blob/main/monitoring/runbooks/voting-app-pod-not-ready.md"
