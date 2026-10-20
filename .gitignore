@@ -11,3 +11,4 @@ node_modules/
 crash.log
 crash.*.log
 .local/
+*.tfplan
