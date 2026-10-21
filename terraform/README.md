@@ -10,7 +10,7 @@ Terraform configuration for a temporary AWS EKS environment for the Voting App D
 - Existing subnet tagging for Kubernetes and load-balancer discovery.
 - Kubernetes API access restricted by `cluster_endpoint_public_access_cidrs`.
 
-The configuration does not create an S3 bucket or install a monitoring stack in AWS. Existing local monitoring remains separate.
+The configuration creates an S3 artifacts bucket with public access blocked, AES-256 server-side encryption, and versioning enabled. The bucket and its associated settings may incur AWS charges. The configuration does not install a monitoring stack in AWS; existing local monitoring remains separate.
 
 ## Prerequisites
 
