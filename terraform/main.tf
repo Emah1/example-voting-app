@@ -190,14 +190,14 @@ resource "aws_eks_node_group" "voting_app" {
     "subnet-0a8d7c8667f511e5d"
   ]
 
-  instance_types = ["t3.small"]
+  instance_types = ["t3.medium"]
   capacity_type  = "ON_DEMAND"
   disk_size      = 20
 
   scaling_config {
-    desired_size = 2
+    desired_size = 1
     min_size     = 1
-    max_size     = 2
+    max_size     = 1
   }
 
   update_config {

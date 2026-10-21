@@ -12,3 +12,12 @@ crash.log
 crash.*.log
 .local/
 *.tfplan
+
+# Terraform local configuration, state, plans, and backups
+**/tfplan
+*.tfplan
+*.tfstate
+*.tfstate.*
+*.backup
+*.tfvars
+!*.tfvars.example
