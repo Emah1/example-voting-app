@@ -46,7 +46,7 @@ jobs:
         run: docker build -t voting-app-worker:ci ./worker
 
       - name: Scan Vote image with Trivy
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.35.0
         with:
           scan-type: image
           image-ref: voting-app-vote:ci
@@ -57,7 +57,7 @@ jobs:
           exit-code: '0'
 
       - name: Scan Result image with Trivy
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.35.0
         with:
           scan-type: image
           image-ref: voting-app-result:ci
@@ -68,7 +68,7 @@ jobs:
           exit-code: '0'
 
       - name: Scan Worker image with Trivy
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.35.0
         with:
           scan-type: image
           image-ref: voting-app-worker:ci
