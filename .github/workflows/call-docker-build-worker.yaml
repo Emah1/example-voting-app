@@ -61,6 +61,7 @@ jobs:
         type=ref,event=branch
         type=ref,event=pr
         type=ref,event=tag
+        type=sha,format=long
       
       ### path to where docker should copy files into image
       ### defaults to root of repository (.)
