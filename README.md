@@ -63,3 +63,23 @@ The voting application only accepts one vote per client browser. It does not reg
 This isn't an example of a properly architected perfectly designed distributed app... it's just a simple
 example of the various types of pieces and languages you might see (queues, persistent data, etc), and how to
 deal with them in Docker at a basic level.
+
+## Run the Voting App with Helm
+
+The custom Helm chart is located in `helm/voting-app`. It deploys the
+vote, result, worker, Redis, and PostgreSQL components to Kubernetes.
+
+### Validate and render without deploying
+
+```shell
+helm lint helm/voting-app
+helm template voting-lab helm/voting-app --namespace default
+```
+
+### Install or upgrade in a local Kubernetes cluster
+
+```shell
+helm upgrade --install voting-lab helm/voting-app \
+  --namespace default \
+  --create-namespace
+```

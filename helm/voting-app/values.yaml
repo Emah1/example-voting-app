@@ -3,8 +3,10 @@ images:
   result: voting-app-result:local
   worker: voting-app-worker:local
 
+# Local-lab development credentials only; do not use in production.
 postgres:
   username: postgres
+  password: postgres
   database: postgres
   storage: 1Gi
 
