@@ -83,3 +83,27 @@ helm upgrade --install voting-lab helm/voting-app \
   --namespace default \
   --create-namespace
 ```
+
+## AWS Deployment Readiness and Cost Control
+
+The AWS infrastructure deployment was prepared using Terraform and
+validated against the AWS environment.
+
+**Completed:**
+- Configured AWS CLI authentication using a named profile.
+- Initialized, formatted, and validated the Terraform configuration.
+- Inspected the existing AWS VPC, subnets, route table, and Internet Gateway.
+- Ran `terraform plan`, which proposed creating 8 resources:
+  an Amazon EKS cluster, a managed worker node group, IAM roles,
+  and IAM policy attachments.
+- Reviewed estimated AWS costs and considered budget safeguards
+  before provisioning.
+
+**Deployment status:** AWS EKS resources have not been provisioned.
+The Terraform plan demonstrates deployment readiness, not a running
+cloud cluster. Cloud deployment and post-deployment validation remain
+pending.
+
+Provisioning was held pending cost review and explicit approval to
+avoid unexpected AWS charges. The Terraform configuration is retained
+for a future deployment.
